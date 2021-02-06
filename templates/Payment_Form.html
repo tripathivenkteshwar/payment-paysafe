@@ -270,8 +270,8 @@
         });
     });
 
-    //var awsUrl = "http://Paysafehelper-env.eba-pehyeyyj.us-west-2.elasticbeanstalk.com";
-    //var localUrl = "https://roiim-cardpayment.herokuapp.com";
+
+    var baseUrl = "https://payment-paysafe.herokuapp.com/";
     //var localUrl = "http://18.222.211.178:8080"
     //var baseUrl= localUrl;
     async function onPay() {
@@ -295,7 +295,7 @@
         }
         $.ajax({
 
-            url: '/single_User_token',
+            url: baseUrl+"/single_User_token",
             type: "POST",
             contentType: "application/json",
             data: JSON.stringify(requestBody,),
@@ -385,7 +385,7 @@
                 console.log(requestBody)
                 $.ajax({
                     type: "POST",
-                    url: '/payment_process',
+                    url: baseUrl+"/payment_process",
                     contentType: "application/json",
                     data: JSON.stringify(requestBody,),
                     success: (data) => {
