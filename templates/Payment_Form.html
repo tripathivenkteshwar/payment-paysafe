@@ -295,8 +295,9 @@
         }
         $.ajax({
 
-            url: baseUrl+"/single_User_token",
+            //url: baseUrl+"/single_User_token",
             //url: "/single_User_token",
+            url:"{{url_for('single_User')}}",
             type: "POST",
             contentType: "application/json",
             data: JSON.stringify(requestBody,),
@@ -386,8 +387,9 @@
                 console.log(requestBody)
                 $.ajax({
                     type: "POST",
-                    url: baseUrl+"/payment_process",
+                    //url: baseUrl+"/payment_process",
                     //url: "/payment_process",
+                    url:"{{url_for('payment_process')}}",
                     contentType: "application/json",
                     data: JSON.stringify(requestBody,),
                     success: (data) => {
