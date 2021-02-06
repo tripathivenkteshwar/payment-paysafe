@@ -37,7 +37,7 @@ def paysafe():
 def payment_Form():
     return render_template('paysafe.html')
 
-@app.route('/single_User_token', methods=['POST'])
+@app.route('/single_User', methods=['POST'])
 def single_User():
 
     user_info.mer_ref = merchantRefNum()
