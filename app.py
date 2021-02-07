@@ -11,8 +11,8 @@ from os import environ
 
 #basedir = path.abspath(path.dirname(__file__))
 #load_dotenv(path.join(basedir, '.env'))
-#SECRET_KEY = environ.get('SECRET_KEY')
-SECRET_KEY="cHJpdmF0ZS03NzUxOkItcWEyLTAtNWYwMzFjZGQtMC0zMDJkMDIxNDQ5NmJlODQ3MzJhMDFmNjkwMjY4ZDNiOGViNzJlNWI4Y2NmOTRlMjIwMjE1MDA4NTkxMzExN2YyZTFhODUzMTUwNWVlOGNjZmM4ZTk4ZGYzY2YxNzQ4"
+SECRET_KEY = environ.get('SECRET_KEY')
+
 user_info = user()
 
 app = Flask(__name__)
@@ -32,10 +32,6 @@ class check(db.Model):
 @app.route('/')
 def paysafe():
     return render_template('Payment_Form.html')
-
-@app.route('/payment_successful')
-def payment_Form():
-    return render_template('paysafe.html')
 
 @app.route('/single_User', methods=['POST'])
 def single_User():
