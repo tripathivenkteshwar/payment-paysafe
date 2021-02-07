@@ -17,8 +17,8 @@ user_info = user()
 
 app = Flask(__name__)
 
-#app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///check_db.db'
-app.config['SQLALCHEMY_DATABASE_URI'] = environ.get('DATABASE_URL')
+app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///check_db.db'
+#app.config['SQLALCHEMY_DATABASE_URI'] = environ.get('DATABASE_URL')
 
 db = SQLAlchemy(app)
 class check(db.Model):
