@@ -5,20 +5,20 @@ from payment import pay_for_product, single_use_token
 from flask_sqlalchemy import SQLAlchemy
 from user import user
 
-from os import environ, path
-from dotenv import load_dotenv
+from os import environ
+#from dotenv import load_dotenv
 
 
-basedir = path.abspath(path.dirname(__file__))
-load_dotenv(path.join(basedir, '.env'))
+#basedir = path.abspath(path.dirname(__file__))
+#load_dotenv(path.join(basedir, '.env'))
 SECRET_KEY = environ.get('SECRET_KEY')
 
 user_info = user()
 
 app = Flask(__name__)
 
-app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///check_db.db'
-
+#app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///check_db.db'
+app.config['SQLALCHEMY_DATABASE_URI'] = environ.get('DATABASE_URL')
 
 db = SQLAlchemy(app)
 class check(db.Model):
