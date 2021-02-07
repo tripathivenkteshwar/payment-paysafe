@@ -11,8 +11,8 @@ from os import environ
 
 #basedir = path.abspath(path.dirname(__file__))
 #load_dotenv(path.join(basedir, '.env'))
-SECRET_KEY = environ.get('SECRET_KEY')
-
+#SECRET_KEY = environ.get('SECRET_KEY')
+SECRET_KEY="cHJpdmF0ZS03NzUxOkItcWEyLTAtNWYwMzFjZGQtMC0zMDJkMDIxNDQ5NmJlODQ3MzJhMDFmNjkwMjY4ZDNiOGViNzJlNWI4Y2NmOTRlMjIwMjE1MDA4NTkxMzExN2YyZTFhODUzMTUwNWVlOGNjZmM4ZTk4ZGYzY2YxNzQ4"
 user_info = user()
 
 app = Flask(__name__)
