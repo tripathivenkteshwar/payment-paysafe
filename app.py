@@ -43,9 +43,9 @@ def single_User():
     user_info.mer_ref = merchantRefNum()
     data = request.get_json()
     print("hello")
-    #ch = check.query.filter_by(email=data['email']).first()
-    #print(ch)
-    """
+    ch = check.query.filter_by(email=data['email']).first()
+    print(ch)
+
     if ch:
         #customer already present
         user_info.cust_id=ch.customerId
@@ -56,9 +56,9 @@ def single_User():
         create_cust=check(email=data['email'], customerId=cust['id'])
         db.session.add(create_cust)
         db.session.commit()
-    """
-    cust = create_customer(data, user_info.mer_ref, SECRET_KEY)
-    user_info.cust_id = cust['id']
+
+    #cust = create_customer(data, user_info.mer_ref, SECRET_KEY)
+    #user_info.cust_id = cust['id']
 
     single_tok = single_use_token(user_info.cust_id, user_info.mer_ref, SECRET_KEY)
 
